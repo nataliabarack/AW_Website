@@ -46,11 +46,11 @@ export default function Portfolio() {
         <div className="absolute inset-0" style={{background: 'linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.2) 80%, rgba(0,0,0,0) 100%)'}} />
 
         <div className="relative z-10 flex-1 flex items-center" style={{paddingTop: '80px'}}>
-          <div style={{paddingLeft: '120px', maxWidth: '720px'}}>
+          <div className="pl-6 md:pl-[120px]" style={{maxWidth: '720px'}}>
             <p className="text-white uppercase tracking-widest text-sm font-medium mb-4" style={{opacity: 0.75}}>
               Public Markets Prism
             </p>
-            <h1 className="font-serif text-white" style={{fontSize: '54px', lineHeight: '1.1', fontWeight: '600', letterSpacing: '-0.5px'}}>
+            <h1 className="font-serif text-white text-[32px] md:text-[54px]" style={{lineHeight: '1.1', fontWeight: '600', letterSpacing: '-0.5px'}}>
               Dynamic Equity<br/>Capital Rotation
             </h1>
             <p className="text-white mt-6" style={{fontSize: '19px', lineHeight: '1.65', fontWeight: '400', opacity: 0.88, maxWidth: '520px'}}>
@@ -91,7 +91,7 @@ export default function Portfolio() {
 
       {/* CTA */}
       <section className="py-16 bg-[#f9f9f7]">
-        <div className="max-w-6xl mx-auto px-8 flex items-center justify-between gap-12">
+        <div className="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
           <div>
             <h2 className="text-3xl font-serif text-[#2d6a4f] font-bold mb-2">Ready to invest?</h2>
             <p className="text-gray-600">Schedule a call to learn more about our public markets strategies.</p>

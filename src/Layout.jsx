@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from './utils';
 
 export default function Layout({ children, currentPageName }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -11,14 +15,16 @@ export default function Layout({ children, currentPageName }) {
         <div className="max-w-full mx-auto px-8 w-full">
           <div className="flex justify-between items-center">
             <Link to={createPageUrl('Home')} className="hover:opacity-80 transition-opacity" style={{marginLeft: '44px'}}>
-              <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6985aae0bba339a3d85e5b15/e552ce09b_ChatGPTImageFeb6202605_14_51PM.png" 
-                alt="ANA Wealth" 
-                className="w-auto"
-                style={{height: '144px', filter: 'brightness(0.72) sepia(0.3) saturate(1.2)', letterSpacing: '-0.01em'}}
+              <img
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6985aae0bba339a3d85e5b15/e552ce09b_ChatGPTImageFeb6202605_14_51PM.png"
+                alt="ANA Wealth"
+                className="h-[72px] md:h-[144px] w-auto"
+                style={{filter: 'brightness(0.72) sepia(0.3) saturate(1.2)', letterSpacing: '-0.01em'}}
               />
             </Link>
-            <div className="flex items-center" style={{gap: '40px'}}>
+
+            {/* Desktop nav links */}
+            <div className="hidden md:flex items-center" style={{gap: '40px'}}>
               <Link to={createPageUrl('Home')} className="flex items-center gap-1 nav-link" style={{fontSize: '15px', fontWeight: '500', letterSpacing: '0.5px', color: '#1A1A1A'}}>
                 About <span style={{fontSize: '13px', opacity: '0.6', marginLeft: '2px'}}>∨</span>
               </Link>
@@ -37,7 +43,7 @@ export default function Layout({ children, currentPageName }) {
                   </div>
                 </div>
               </div>
-              <a href="#" className="flex items-center gap-1 nav-link" style={{fontSize: '15px', fontWeight: '500', letterSpacing: '0.5px', color: '#1A1A1A'}}>
+              <a href="#" className="flex items-center gap-1 nav-link whitespace-nowrap" style={{fontSize: '15px', fontWeight: '500', letterSpacing: '0.5px', color: '#1A1A1A'}}>
                 Research Hub <span style={{fontSize: '13px', opacity: '0.6', marginLeft: '2px'}}>∨</span>
               </a>
               <Button className="text-white text-sm" style={{backgroundColor: '#1F4D3A', height: '42px', padding: '0 18px', borderRadius: '9px', fontWeight: '500', letterSpacing: '0.3px', border: '1px solid rgba(0,0,0,0.18)', transition: 'background-color 200ms ease'}}
@@ -46,6 +52,27 @@ export default function Layout({ children, currentPageName }) {
                 Contact
               </Button>
             </div>
+
+            {/* Mobile hamburger button */}
+            <button
+              className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+              onClick={() => setMobileMenuOpen(o => !o)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round">
+                  <line x1="3" y1="3" x2="17" y2="17" />
+                  <line x1="17" y1="3" x2="3" y2="17" />
+                </svg>
+              ) : (
+                <>
+                  <span className="w-6 h-px bg-[#1A1A1A] block" />
+                  <span className="w-6 h-px bg-[#1A1A1A] block" />
+                  <span className="w-6 h-px bg-[#1A1A1A] block" />
+                </>
+              )}
+            </button>
+
             <style>{`
               .nav-link {
                 position: relative;
@@ -72,6 +99,51 @@ export default function Layout({ children, currentPageName }) {
           </div>
         </div>
       </nav>
+
+      {/* Mobile menu panel */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white border-b border-gray-100 shadow-md sticky top-[90px] z-40">
+          <div className="px-6 py-5 space-y-1">
+            <Link
+              to={createPageUrl('Home')}
+              onClick={closeMobileMenu}
+              className="block py-3 text-sm font-medium text-[#1A1A1A] border-b border-gray-100 hover:text-[#2d6a4f] transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              to={createPageUrl('Portfolio') + '?type=public'}
+              onClick={closeMobileMenu}
+              className="block py-3 text-sm font-medium text-[#1A1A1A] border-b border-gray-100 hover:text-[#2d6a4f] transition-colors"
+            >
+              Public Markets Prism
+            </Link>
+            <Link
+              to={createPageUrl('PrivateMarketsPrism')}
+              onClick={closeMobileMenu}
+              className="block py-3 text-sm font-medium text-[#1A1A1A] border-b border-gray-100 hover:text-[#2d6a4f] transition-colors"
+            >
+              Private Markets Prism
+            </Link>
+            <a
+              href="#"
+              onClick={closeMobileMenu}
+              className="block py-3 text-sm font-medium text-[#1A1A1A] border-b border-gray-100 hover:text-[#2d6a4f] transition-colors"
+            >
+              Research Hub
+            </a>
+            <div className="pt-3">
+              <Button
+                className="w-full text-white text-sm"
+                style={{backgroundColor: '#1F4D3A', height: '42px', borderRadius: '9px', fontWeight: '500'}}
+                onClick={closeMobileMenu}
+              >
+                Contact
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Page Content */}
       {children}

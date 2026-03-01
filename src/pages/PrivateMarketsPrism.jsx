@@ -56,12 +56,12 @@ export default function PrivateMarketsPrism() {
           src="https://media.istockphoto.com/id/1298569563/video/car-driving-along-a-winding-mountain-pass-alongside-a-river-in-green-conifer-forests-in-a.mp4?s=mp4-640x640-is&k=20&c=xPiVTlVH6z5gLqPjE9F1hDrYv_wq_PjcfpUsl_75sZc="
         />
         <div className="absolute inset-0" style={{background: 'linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.2) 100%)'}} />
-        <div className="relative z-10 w-full" style={{paddingTop: '140px', paddingLeft: '120px'}}>
+        <div className="relative z-10 w-full pt-[80px] md:pt-[140px] pl-6 md:pl-[120px]">
           <div style={{maxWidth: '760px'}}>
-            <h1 className="font-serif text-white" style={{fontSize: '60px', lineHeight: '1.10', fontWeight: '600', letterSpacing: '-0.5px'}}>
+            <h1 className="font-serif text-white text-[36px] md:text-[60px]" style={{lineHeight: '1.10', fontWeight: '600', letterSpacing: '-0.5px'}}>
               Our Portfolios
             </h1>
-            <p className="font-serif italic text-white" style={{fontSize: '30px', lineHeight: '1.2', fontWeight: '500', letterSpacing: '0.8px', color: 'rgba(255,255,255,0.95)', marginTop: '28px', marginBottom: '28px'}}>
+            <p className="font-serif italic text-white text-[20px] md:text-[30px]" style={{lineHeight: '1.2', fontWeight: '500', letterSpacing: '0.8px', color: 'rgba(255,255,255,0.95)', marginTop: '28px', marginBottom: '28px'}}>
               Evergreen by design
             </p>
             <p style={{fontSize: '21px', lineHeight: '1.6', fontWeight: '500', maxWidth: '560px', color: 'rgba(255,255,255,0.92)'}}>
@@ -72,9 +72,9 @@ export default function PrivateMarketsPrism() {
       </section>
 
       {/* One Investment Section */}
-      <section className="py-28 bg-white">
+      <section className="py-12 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-8">
-          <div className="flex items-center gap-16">
+          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
             <div className="flex-1 space-y-6">
               <div>
                 <h2 className="text-4xl font-serif text-[#2d6a4f]">
@@ -86,7 +86,7 @@ export default function PrivateMarketsPrism() {
                 Navigating private markets requires time, data, and professional perspective. Instead of selecting individual funds and managing multiple commitments, access a curated portfolio of leading global managers through a single allocation.
               </p>
             </div>
-            <div className="w-96 flex-shrink-0 rounded-lg overflow-hidden" style={{height: '320px', position: 'relative'}}>
+            <div className="w-full md:w-96 flex-shrink-0 rounded-lg overflow-hidden" style={{height: '280px', position: 'relative'}}>
               <video
                 autoPlay
                 muted
@@ -208,8 +208,8 @@ export default function PrivateMarketsPrism() {
             <span className="font-bold">Designed for Smart Allocators</span><br/><span className="italic">Building Wealth Beyond Market Cycles</span>
           </h2>
           <div className="w-16 h-px bg-[#C0C0C0] mt-4 mb-12 mx-auto"></div>
-          <div className="flex items-center justify-center gap-12 max-w-2xl mx-auto">
-            <p className="text-lg text-black leading-relaxed font-light flex-1">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 max-w-2xl mx-auto">
+            <p className="text-lg text-black leading-relaxed font-light flex-1 text-center md:text-left">
               If you value discipline over noise, simplicity over complexity, and evolution over stagnation.
             </p>
             <button className="bg-[#2d6a4f] hover:bg-[#1a5742] text-white px-6 py-3 text-sm rounded-sm whitespace-nowrap">

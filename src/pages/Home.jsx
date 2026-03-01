@@ -27,12 +27,12 @@ export default function Home() {
 
         {/* Centered text content */}
         <div className="relative z-10 flex-1 flex items-start" style={{paddingTop: '140px'}}>
-          <div className="w-full" style={{paddingLeft: '120px'}}>
+          <div className="w-full pl-6 md:pl-[120px]">
             <div style={{maxWidth: '760px'}}>
-              <h1 className="font-serif text-white" style={{fontSize: '60px', lineHeight: '1.10', fontWeight: '600', letterSpacing: '-0.5px', maxWidth: '760px'}}>
+              <h1 className="font-serif text-white text-[36px] md:text-[60px]" style={{lineHeight: '1.10', fontWeight: '600', letterSpacing: '-0.5px', maxWidth: '760px'}}>
                 Global Capital Rotation
               </h1>
-              <p className="font-serif italic text-white" style={{fontSize: '30px', lineHeight: '1.2', fontWeight: '500', letterSpacing: '0.8px', color: 'rgba(255,255,255,0.95)', marginTop: '28px', marginBottom: '40px'}}>
+              <p className="font-serif italic text-white text-[20px] md:text-[30px]" style={{lineHeight: '1.2', fontWeight: '500', letterSpacing: '0.8px', color: 'rgba(255,255,255,0.95)', marginTop: '28px', marginBottom: '40px'}}>
                 Curated with Discipline
               </p>
               <p style={{fontSize: '21px', lineHeight: '1.6', fontWeight: '500', maxWidth: '560px', color: 'rgba(255,255,255,0.92)', marginBottom: '36px'}}>
@@ -65,7 +65,7 @@ export default function Home() {
       {/* EQT-style intro section */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-8">
-          <div className="grid grid-cols-2 gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
             {/* Left: big statement text */}
             <div>
               <p className="text-3xl font-serif text-black leading-snug" style={{fontWeight: '400'}}>
@@ -113,7 +113,7 @@ export default function Home() {
       </section>
 
       {/* Value Props */}
-      <section className="pt-8 py-28 bg-gradient-to-b from-white to-[#C0C0C0]/5">
+      <section className="pt-8 py-12 md:py-28 bg-gradient-to-b from-white to-[#C0C0C0]/5">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             <div className="flex flex-col h-full">
@@ -164,7 +164,7 @@ export default function Home() {
             <span className="font-bold">Invest with Confidence</span><br/><span className="italic">Not Confusion</span>
           </h2>
           <div className="w-16 h-px bg-[#C0C0C0] mt-4 mb-12 mx-auto"></div>
-          <div className="flex items-center justify-center gap-12 max-w-3xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 max-w-3xl mx-auto">
             <p className="text-lg text-black leading-relaxed font-light flex-1">
               If you value quality, complementary investment strategy and enduring alignment.
             </p>
